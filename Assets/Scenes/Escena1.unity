@@ -1091,13 +1091,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 610622038}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Father: {fileID: 2036663056}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1 &704619963
 GameObject:
   m_ObjectHideFlags: 0
@@ -2398,6 +2398,7 @@ GameObject:
   - component: {fileID: 2036663058}
   - component: {fileID: 2036663057}
   - component: {fileID: 2036663059}
+  - component: {fileID: 2036663060}
   m_Layer: 0
   m_Name: Pitilin
   m_TagString: Untagged
@@ -2487,10 +2488,11 @@ Transform:
   m_GameObject: {fileID: 2036663052}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.4, y: 2.05, z: -0.31}
+  m_LocalPosition: {x: 8.76, y: 2.05, z: -0.13}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 610622041}
   - {fileID: 28874697}
   - {fileID: 130377301}
   - {fileID: 704619964}
@@ -2534,6 +2536,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 693759e8cce55a04cbef63554f947344, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Speed: 1
+  JumpSpeed: 10
+  AirControl: 0
+  TurnSpeed: 0.1
 --- !u!114 &2036663059
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2561,9 +2567,25 @@ MonoBehaviour:
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: 
+  m_DefaultActionMap: Gameplay
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &2036663060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2036663052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 693759e8cce55a04cbef63554f947344, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 1
+  JumpSpeed: 10
+  AirControl: 0
+  TurnSpeed: 0.1
 --- !u!1 &2077114298
 GameObject:
   m_ObjectHideFlags: 0
@@ -2675,7 +2697,6 @@ Transform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 610622041}
   - {fileID: 755444264}
   - {fileID: 331135898}
   - {fileID: 1467708982}
