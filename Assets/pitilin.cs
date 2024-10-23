@@ -12,9 +12,13 @@ public class pitilin : MonoBehaviour
     CharacterController _characterController;
     InputController _input;
     GroundChecker _groundChecker;
+
+    //VELOCITAT CAMINAR
     public float Speed = 1;
     public float JumpSpeed = 10;
     public float AirControl;
+
+    //VELOCITAT ROTACIÓ
     public float TurnSpeed = 0.1f;
     private Vector3 _lastVelocity;
 
@@ -25,7 +29,7 @@ public class pitilin : MonoBehaviour
         _groundChecker = GetComponentInChildren<GroundChecker>();
     }
 
-    // Update is called once per frame
+  
     void Update()
     {
         Move();
@@ -49,9 +53,9 @@ public class pitilin : MonoBehaviour
         //_characterController.SimpleMove(direction * Speed);
 
         Vector3 vel = new Vector3();
-        float smoothFactor = _groundChecker.Grounded ? 1 : AirControl * Time.deltaTime;
+        float smoothFactor = _groundChecker.Grounded? 1 : AirControl * Time.deltaTime;
 
-
+        
         vel.x = Mathf.Lerp(_lastVelocity.x, direction.x * Speed, smoothFactor);
         vel.y = _lastVelocity.y;
         vel.z = Mathf.Lerp(_lastVelocity.z, direction.z * Speed, smoothFactor);
@@ -61,10 +65,11 @@ public class pitilin : MonoBehaviour
         if (ShouldJump())                   //SALTARRCH
             Jump(ref vel);
 
+        Debug.Log(_input.Move.x);
         _characterController.Move(vel * Time.deltaTime);
 
 
-
+        
         //turn around
         if (direction.magnitude > 0)
         {

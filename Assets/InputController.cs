@@ -9,6 +9,7 @@ public class InputController : MonoBehaviour
     // Start is called before the first frame update
     Vector2 _move;
     public Vector2 Move => _move;
+
     public bool _jump;
     public bool Jump => _jump;
     //misma funcion solo con una linea de codigo
