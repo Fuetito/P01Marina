@@ -7,9 +7,11 @@ public class E_PlayerMovement : MonoBehaviour
 {
     CharacterController _characterController;
     E_InputController _input;
+
+
     public float Speed = 1;
 
-    public float JumpSpeed = 10;
+    public float JumpSpeed = 5;
     private Vector3 _lastVelocity;
 
 
@@ -71,6 +73,7 @@ public class E_PlayerMovement : MonoBehaviour
             transform.LookAt(target);
         }
         _lastVelocity = velocity;
+
     }
 
     private float GetGravity()
