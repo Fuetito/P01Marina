@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class slower : MonoBehaviour
+public class lento : MonoBehaviour
 {
     Rigidbody _rigidbody;
 
@@ -12,7 +12,7 @@ public class slower : MonoBehaviour
     public float AngularDragEffect = 10; //Aquestes tres seguents es per a que tingui diferents pilotes a les que els hi afecti diferent el medi.
     public float DragEffect = 5;
     public float VelocityEffect = 0.5f;
-    
+
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
