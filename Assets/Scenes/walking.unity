@@ -379,7 +379,6 @@ GameObject:
   - component: {fileID: 280629918}
   - component: {fileID: 280629917}
   - component: {fileID: 280629916}
-  - component: {fileID: 280629920}
   m_Layer: 0
   m_Name: plataform_move
   m_TagString: Untagged
@@ -473,27 +472,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!95 &280629920
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 280629915}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 37d94d5111cb9a34cbd4acf7bd05c34a, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &331135894
 GameObject:
   m_ObjectHideFlags: 0
@@ -506,8 +484,7 @@ GameObject:
   - component: {fileID: 331135897}
   - component: {fileID: 331135896}
   - component: {fileID: 331135895}
-  - component: {fileID: 331135899}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: floor_inicio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -609,22 +586,6 @@ Transform:
   - {fileID: 464436464}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &331135899
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 331135894}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b22381e3c56c3f4d9297dc7f8d79c89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Radius: 0.15
-  WhatIsGround:
-    serializedVersion: 2
-    m_Bits: 8
 --- !u!1 &406271380
 GameObject:
   m_ObjectHideFlags: 0
@@ -1130,13 +1091,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 610622038}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.41, y: 4.49, z: -10}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Father: {fileID: 2036663056}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1 &704619963
 GameObject:
   m_ObjectHideFlags: 0
@@ -1790,54 +1751,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1410752985
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1410752987}
-  - component: {fileID: 1410752986}
-  m_Layer: 3
-  m_Name: GroundChecher
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &1410752986
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1410752985}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b22381e3c56c3f4d9297dc7f8d79c89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Radius: 0.15
-  WhatIsGround:
-    serializedVersion: 2
-    m_Bits: 8
---- !u!4 &1410752987
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1410752985}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.39, y: 0.5, z: -0.42}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1467708978
 GameObject:
   m_ObjectHideFlags: 0
@@ -1955,7 +1868,6 @@ GameObject:
   - component: {fileID: 1613622348}
   - component: {fileID: 1613622347}
   - component: {fileID: 1613622346}
-  - component: {fileID: 1613622350}
   m_Layer: 0
   m_Name: plataforma_giratoria
   m_TagString: Untagged
@@ -2051,27 +1963,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &1613622350
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1613622345}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9c53825c3e0386440a909b0f0161f21e, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1629825900
 GameObject:
   m_ObjectHideFlags: 0
@@ -2508,7 +2399,6 @@ GameObject:
   - component: {fileID: 2036663057}
   - component: {fileID: 2036663059}
   - component: {fileID: 2036663060}
-  - component: {fileID: 2036663061}
   m_Layer: 0
   m_Name: Pitilin
   m_TagString: Untagged
@@ -2598,10 +2488,11 @@ Transform:
   m_GameObject: {fileID: 2036663052}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.4, y: 2.05, z: -0.31}
+  m_LocalPosition: {x: 8.76, y: 2.05, z: -0.13}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 610622041}
   - {fileID: 28874697}
   - {fileID: 130377301}
   - {fileID: 704619964}
@@ -2679,28 +2570,7 @@ MonoBehaviour:
   m_DefaultActionMap: Gameplay
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!95 &2036663060
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2036663052}
-  m_Enabled: 0
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9c703c679bc2dab43a39ce93c390665d, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
---- !u!114 &2036663061
+--- !u!114 &2036663060
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2709,10 +2579,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2036663052}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7f153aba589e3e4598bd41da18d3a17, type: 3}
+  m_Script: {fileID: 11500000, guid: 693759e8cce55a04cbef63554f947344, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _jump: 0
+  Speed: 1
+  JumpSpeed: 10
+  AirControl: 0
+  TurnSpeed: 0.1
 --- !u!1 &2077114298
 GameObject:
   m_ObjectHideFlags: 0
@@ -2824,7 +2697,6 @@ Transform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 610622041}
   - {fileID: 755444264}
   - {fileID: 331135898}
   - {fileID: 1467708982}
@@ -2832,4 +2704,3 @@ SceneRoots:
   - {fileID: 1248983024}
   - {fileID: 1613622349}
   - {fileID: 2036663056}
-  - {fileID: 1410752987}
