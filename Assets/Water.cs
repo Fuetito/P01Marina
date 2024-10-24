@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Water : MonoBehaviour
 {
-    /*public float Density = 1;
+    public float Density = 1;
     private void OnTriggerEnter(Collider other)
     {
         var Slower = other.GetComponent<slower>();     //el GetComponent mira de cualquier objeto.
@@ -21,5 +21,5 @@ public class Water : MonoBehaviour
         {
             Slower.Reset();
         }
-    }*/
+    }
 }
