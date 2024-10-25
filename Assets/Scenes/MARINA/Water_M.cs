@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class water : MonoBehaviour
+public class Water_M : MonoBehaviour
 {
     public float Density = 1;
     private void OnTriggerEnter(Collider other)
     {
 
-        var Slower = other.GetComponent<slower>();
+        var Slower = other.GetComponent<Slower>();
         if (Slower != null)
         {
             Slower.SlowDown(Density);
@@ -23,4 +23,5 @@ public class water : MonoBehaviour
             Slower.Reset();
         }
     }
+
 }
