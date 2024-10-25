@@ -7,20 +7,21 @@ public class agua : MonoBehaviour
     public float Density = 1;
     private void OnTriggerEnter(Collider other)
     {
-        var Slower = other.GetComponent<lento>();     //el GetComponent mira de cualquier objeto.
+
+        var Slower = other.GetComponent<Slower>();
         if (Slower != null)
         {
             Slower.SlowDown(Density);
         }
     }
 
-    private void OnTriggerExit(Collider other)      //Cuando salga del agua
+    private void OnTriggerExit(Collider other)
     {
-        var Slower = other.GetComponent<lento>();
+        var Slower = other.GetComponent<slower>();
         if (Slower != null)
         {
             Slower.Reset();
         }
     }
-}
 
+}

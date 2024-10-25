@@ -10,7 +10,10 @@ public class InputController2 : MonoBehaviour
 
     public bool _jump;
 
-    public bool Jump => _jump;
+   public bool Jump => _jump;
+
+    private bool _isRunning;
+    public bool IsRunning => _isRunning;
 
     private void OnMove(InputValue input)
     {
@@ -22,12 +25,21 @@ public class InputController2 : MonoBehaviour
         _jump = true;
 
     }
+
+    private void OnRun(InputValue input)
+    {
+        // Detectar si el Shift está presionado
+        _isRunning = input.isPressed;
+    }
+
     private void LateUpdate()
     {
         _jump = false;
     }
     private void Update()
     {
+        // Actualizar si está corriendo en cada frame para reflejar el estado actual de Shift
+        _isRunning = Keyboard.current.rightShiftKey.isPressed;
         Debug.Log(Move);
     }
 }
