@@ -10,7 +10,7 @@ public class Movimiento : MonoBehaviour
     InputController2 _input;
 
     public float Speed = 1;
-
+    public float TurnSpeed = 5;
     public float JumpSpeed = 5;
     private Vector3 _lastVelocity;
 
@@ -37,7 +37,8 @@ public class Movimiento : MonoBehaviour
 
     private void Move()
     {
-        Vector3 direction = new Vector3(_input.Move.x, 0, _input.Move.y); //La y es 0 para que solo se mueva horizontalmente, pero aun así el
+        var localInput = transform.right * _input.Move.x + transform.forward * _input.Move.y;
+        Vector3 direction = new Vector3(localInput.x, 0, localInput.z); //La y es 0 para que solo se mueva horizontalmente, pero aun así el
                                                                           //eje z tenemos y pq en InputController tenemos que coge un vector2, de manera que solo hay x e y
                                                                           //_characterController.SimpleMove(direction * Speed);   //Tiene en cuenta la gravedad de por si.
 
@@ -61,7 +62,10 @@ public class Movimiento : MonoBehaviour
         if (direction.magnitude > 0)
         {
             Vector3 target = transform.position + direction;
-            transform.LookAt(target);
+            Vector3 current = transform.position + transform.forward;
+            Vector3 look = Vector3.Lerp(current, target, TurnSpeed * Time.deltaTime);
+
+            transform.LookAt(look);
         }
         _lastVelocity = velocity;
     }
