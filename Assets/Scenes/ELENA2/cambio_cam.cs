@@ -1,12 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
+/*using UnityEngine;
 
 public class cambio_cam : MonoBehaviour
 {
-    //Alpha Creative
-    //Si te ha sido de utilidad el contenido únete a nuestra comunidad y suscribete
-    //Pd: Solo si quieres ;)
 
     public bool tPerson = true;
     [Header("Objetivos de cámara")]
@@ -23,9 +20,12 @@ public class cambio_cam : MonoBehaviour
     private Transform follow;
     private float defaultDistance;
     private float newDistance;
-    [Header("Ajustes de Cámara")]
-    public float maxDistace = 20f;
-    public float minDistance = 4f;
+//Distancias camara
+*//*    public float maxDistace = 20.0f;
+*//*    public float minDistance = 10.0f;
+    public float height = 10f.0;
+    public float angleCam = 45.0;
+
     [Space(6)]
 
     [Header("Tecla para cambiar perspectiva")]
@@ -38,9 +38,9 @@ public class cambio_cam : MonoBehaviour
         ChangePerspective(tPerson);
 
 
-        defaultDistance = (maxDistace + minDistance) / 2;
-        newDistance = defaultDistance;
-
+        *//*defaultDistance = (maxDistace + minDistance) / 2;
+        newDistance = defaultDistance;*//*
+        newDistance = minDistance;
         Cursor.lockState = CursorLockMode.Locked;
         camera = GetComponent<Camera>();
 
@@ -134,5 +134,58 @@ public class cambio_cam : MonoBehaviour
 
         transform.position = follow.position + direction * distance;
         transform.rotation = Quaternion.LookRotation(follow.position - transform.position);
+    }
+}
+*/
+using UnityEngine;
+
+public class CameraSwitch : MonoBehaviour
+{
+    public Camera firstPersonCamera;
+    public Camera thirdPersonCamera;
+    public Transform player; // Referencia al jugador para seguir su posición
+    public float distance = 5.0f; // Distancia de la cámara en tercera persona
+    public float height = 2.0f; // Altura de la cámara en tercera persona
+    public float angleCam = 30.0f; // Ángulo de la cámara en tercera persona
+
+    private bool isThirdPerson = true;
+
+    void Start()
+    {
+        // Inicializa las cámaras
+        firstPersonCamera.enabled = !isThirdPerson;
+        thirdPersonCamera.enabled = isThirdPerson;
+    }
+
+    void Update()
+    {
+        // Cambia de cámara con la tecla F
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            isThirdPerson = !isThirdPerson;
+            firstPersonCamera.enabled = !isThirdPerson;
+            thirdPersonCamera.enabled = isThirdPerson;
+        }
+
+        // Actualiza la posición y rotación de la cámara en tercera persona
+        if (isThirdPerson)
+        {
+            UpdateThirdPersonCamera();
+        }
+    }
+
+    void UpdateThirdPersonCamera()
+    {
+        // Calcula la posición deseada de la cámara en tercera persona
+        Vector3 cameraPosition = player.position - player.forward * distance + Vector3.up * height;
+
+        // Aplica la posición calculada a la cámara
+        thirdPersonCamera.transform.position = cameraPosition;
+
+        // Calcula la rotación deseada de la cámara
+        Quaternion cameraRotation = Quaternion.Euler(angleCam, player.eulerAngles.y, 0);
+
+        // Aplica la rotación calculada a la cámara
+        thirdPersonCamera.transform.rotation = cameraRotation;
     }
 }
