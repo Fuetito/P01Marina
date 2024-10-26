@@ -13,6 +13,8 @@ public class pitilin : MonoBehaviour
     InputController _input;
     GroundChecker _groundChecker;
 
+    Rigidbody rigidbody;
+
     //VELOCITAT CAMINAR
     public float Speed = 1;
    public float JumpSpeed = 10;

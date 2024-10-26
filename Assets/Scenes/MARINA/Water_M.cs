@@ -8,7 +8,7 @@ public class Water_M : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
-        var Slower = other.GetComponent<Slower>();
+        var Slower = other.GetComponent<slower>();
         if (Slower != null)
         {
             Slower.SlowDown(Density);

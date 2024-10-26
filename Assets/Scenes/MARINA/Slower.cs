@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Slower : MonoBehaviour
+public class slower : MonoBehaviour
 {
     Rigidbody _rigidbody;
 

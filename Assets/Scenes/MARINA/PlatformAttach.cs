@@ -4,23 +4,26 @@ using UnityEngine;
 
 public class PlatformAttach : MonoBehaviour
 {
+    private Transform originalParent;
+
     void OnTriggerEnter(Collider other)
     {
-        // Check de q el player entre en la plataforma
         if (other.CompareTag("Player"))
         {
-            // Set plataforma como padre del player
+            // Store the player's original parent so we can reattach later
+            originalParent = other.transform.parent;
+
+            // Attach the player to the platform
             other.transform.SetParent(transform);
         }
     }
 
     void OnTriggerExit(Collider other)
     {
-        // Check de que el player salga de la plataforma
         if (other.CompareTag("Player"))
         {
-            // Quitar player de ser hijo de la plataforma
-            other.transform.SetParent(null);
+            // Reattach the player to its original parent
+            other.transform.SetParent(originalParent);
         }
     }
 }
