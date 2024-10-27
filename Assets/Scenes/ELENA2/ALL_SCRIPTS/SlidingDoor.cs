@@ -9,7 +9,7 @@ public class SlidingDoor : MonoBehaviour
     public Vector3 posicionCerrada;
     public float velocidadApertura = 2f;
     private bool jugadorCerca = false;
-    private bool puertaAbierta = false;
+    //private bool puertaAbierta = false;
 
     void Start()
     {

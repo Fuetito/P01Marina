@@ -2,25 +2,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Agua : MonoBehaviour
+public class agua : MonoBehaviour
 {
-    public float Density = 1;
+    public float slowDownFactor = 0.5f; // Factor de desaceleración
+
     private void OnTriggerEnter(Collider other)
     {
-
-        var Slower = other.GetComponent<slow>();
-        if (Slower != null)
+        if (other.CompareTag("Player"))
         {
-            Slower.SlowDown(Density);
+            Movimiento movimiento = other.GetComponent<Movimiento>();
+            if (movimiento != null)
+            {
+                movimiento.ModifySpeed(slowDownFactor); // Reduce la velocidad del jugador
+            }
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        var Slower = other.GetComponent<slow>();
-        if (Slower != null)
+        if (other.CompareTag("Player"))
         {
-            Slower.Reset();
+            Movimiento movimiento = other.GetComponent<Movimiento>();
+            if (movimiento != null)
+            {
+                movimiento.ResetSpeed(); // Restaura la velocidad del jugador
+            }
         }
     }
 }
+

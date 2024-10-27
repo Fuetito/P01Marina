@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
+//using System;
 
 
 public class Movimiento : MonoBehaviour
@@ -15,11 +15,13 @@ public class Movimiento : MonoBehaviour
     public float JumpSpeed = 5;
     public float RunSpeed = 2;
     private Vector3 _lastVelocity;
+    private float originalSpeed;
 
     void Start()
     {
         _characterController = GetComponent<CharacterController>();
         _input = GetComponent<InputController2>();
+        originalSpeed = Speed;
     }
 
     // Update is called once per frame
@@ -81,6 +83,14 @@ public class Movimiento : MonoBehaviour
         //return _lastVelocity.y + Physics.gravity.y * Time.deltaTime;
     }
 
+    public void ModifySpeed(float factor)
+    {
+        Speed = originalSpeed * factor; // Reduce la velocidad multiplicando por el factor de desaceleración
+    }
 
+    public void ResetSpeed()
+    {
+        Speed = originalSpeed; // Restaura la velocidad original.
+    }
 
 }
