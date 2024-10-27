@@ -10,7 +10,7 @@ public class InputController2 : MonoBehaviour
 
     public bool _jump;
 
-   public bool Jump => _jump;
+    public bool Jump => _jump;
 
     private bool _isRunning;
     public bool IsRunning => _isRunning;
