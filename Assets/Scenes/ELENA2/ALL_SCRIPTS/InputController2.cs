@@ -28,7 +28,6 @@ public class InputController2 : MonoBehaviour
 
     private void OnRun(InputValue input)
     {
-        // Detectar si el Shift está presionado
         _isRunning = input.isPressed;
     }
 
@@ -38,7 +37,6 @@ public class InputController2 : MonoBehaviour
     }
     private void Update()
     {
-        // Actualizar si está corriendo en cada frame para reflejar el estado actual de Shift
         _isRunning = Keyboard.current.rightShiftKey.isPressed;
         Debug.Log(Move);
     }

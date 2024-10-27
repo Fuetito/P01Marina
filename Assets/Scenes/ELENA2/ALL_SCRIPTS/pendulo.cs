@@ -17,7 +17,7 @@ public class pendulo : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         float angle = limit * Mathf.Sin(Time.time + random * speed + delay);

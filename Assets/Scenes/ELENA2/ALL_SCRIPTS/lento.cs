@@ -24,7 +24,7 @@ public class lento : MonoBehaviour
     }
     internal void SlowDown(float density)
     {
-        _orgDrag = _rigidbody.drag; //nos guardamos los valores iniciales para después poder volver a darlos en el reset.
+        _orgDrag = _rigidbody.drag; 
         _orgAngularDrag = _rigidbody.angularDrag;
 
         _rigidbody.velocity *= Mathf.Min(1, (VelocityEffect / density));

@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using System;
+
 
 
 public class Movimiento : MonoBehaviour
@@ -24,7 +24,7 @@ public class Movimiento : MonoBehaviour
         originalSpeed = Speed;
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         Move();
@@ -37,36 +37,32 @@ public class Movimiento : MonoBehaviour
     private bool ShouldJump()
     {
         return _characterController.isGrounded && _input.Jump;
-        //return _input.Jump; //TO TO replace with new input
+
     }
 
     private void Move()
     {
         var localInput = transform.right * _input.Move.x + transform.forward * _input.Move.y;
-        Vector3 direction = new Vector3(localInput.x, 0, localInput.z); //La y es 0 para que solo se mueva horizontalmente, pero aun así el
-                                                                        //eje z tenemos y pq en InputController tenemos que coge un vector2, de manera que solo hay x e y
-                                                                        //_characterController.SimpleMove(direction * Speed);   //Tiene en cuenta la gravedad de por si.
-
-        // Usar RunSpeed si está corriendo, de lo contrario usar Speed
+        Vector3 direction = new Vector3(localInput.x, 0, localInput.z); 
+                                                                       
         float currentSpeed = _input.IsRunning ? RunSpeed : Speed;
 
         Vector3 velocity = new Vector3();
         velocity.x = direction.x * currentSpeed;
         velocity.y = _lastVelocity.y;
         velocity.z = direction.z * currentSpeed;
-        velocity.y = GetGravity();                  //Esta y la aterior  sirve para calcular la velocidad
+        velocity.y = GetGravity();               
 
 
-        if (ShouldJump())               //El salto tiene que ser depsues de la gravedad, porque sino la sobreescribe 
+        if (ShouldJump())          
         {
             Jump(ref velocity);
         }
 
-        _characterController.Move(velocity * Time.deltaTime);       //Esta para cambiar de posicion teniendo en cuenta la velocidad que emos calculado antes.
+        _characterController.Move(velocity * Time.deltaTime);    
 
 
 
-        //Turn
         if (direction.magnitude > 0)
         {
             Vector3 target = transform.position + direction;
@@ -80,17 +76,17 @@ public class Movimiento : MonoBehaviour
     private float GetGravity()
     {
         return _characterController.isGrounded ? -0.1f : _lastVelocity.y + Physics.gravity.y * Time.deltaTime;
-        //return _lastVelocity.y + Physics.gravity.y * Time.deltaTime;
+
     }
 
     public void ModifySpeed(float factor)
     {
-        Speed = originalSpeed * factor; // Reduce la velocidad multiplicando por el factor de desaceleración
+        Speed = originalSpeed * factor; 
     }
 
     public void ResetSpeed()
     {
-        Speed = originalSpeed; // Restaura la velocidad original.
+        Speed = originalSpeed; 
     }
 
 }

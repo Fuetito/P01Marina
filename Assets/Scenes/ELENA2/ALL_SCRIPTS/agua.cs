@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class agua : MonoBehaviour
 {
-    public float slowDownFactor = 0.5f; // Factor de desaceleración
+    public float slowDownFactor = 0.5f; 
 
     private void OnTriggerEnter(Collider other)
     {
@@ -13,7 +13,7 @@ public class agua : MonoBehaviour
             Movimiento movimiento = other.GetComponent<Movimiento>();
             if (movimiento != null)
             {
-                movimiento.ModifySpeed(slowDownFactor); // Reduce la velocidad del jugador
+                movimiento.ModifySpeed(slowDownFactor); 
             }
         }
     }
@@ -25,7 +25,7 @@ public class agua : MonoBehaviour
             Movimiento movimiento = other.GetComponent<Movimiento>();
             if (movimiento != null)
             {
-                movimiento.ResetSpeed(); // Restaura la velocidad del jugador
+                movimiento.ResetSpeed(); 
             }
         }
     }

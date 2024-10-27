@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class animacion_mov : MonoBehaviour
 {
-    // Start is called before the first frame update
     public Animator Anim;
     public float WalkSpeed;
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKey(KeyCode.W))

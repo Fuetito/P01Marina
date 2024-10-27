@@ -8,14 +8,14 @@ public class PlataformaBalaninr : MonoBehaviour
 
     void Start()
     {
-        platformRigidbody = transform.parent.GetComponent<Rigidbody>(); // Obtiene el Rigidbody de la plataforma.
+        platformRigidbody = transform.parent.GetComponent<Rigidbody>(); 
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            // Aumenta la fuerza de la plataforma cuando el jugador pisa.
+           
             platformRigidbody.AddForce(new Vector3(0, 5, 0), ForceMode.Impulse);
         }
     }
@@ -24,7 +24,7 @@ public class PlataformaBalaninr : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            // Se puede agregar alguna lógica si deseas que ocurra algo al salir.
+
         }
     }
 }
