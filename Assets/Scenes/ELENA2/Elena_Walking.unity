@@ -1082,7 +1082,7 @@ MonoBehaviour:
   speed: 1.5
   limit: 75
   randomStart: 0
-  delay: 0
+  delay: 10
 --- !u!4 &680824651
 Transform:
   m_ObjectHideFlags: 0
@@ -2492,7 +2492,7 @@ MonoBehaviour:
   speed: 1.5
   limit: 75
   randomStart: 0
-  delay: 35
+  delay: 90
 --- !u!4 &1891152528
 Transform:
   m_ObjectHideFlags: 0
